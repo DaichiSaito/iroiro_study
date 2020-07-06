@@ -1,0 +1,41 @@
+<%= form_with model: @register_form, url: users_path, local: true do |f| %>
+  <% if f.object.errors.any? %>
+    <ul>
+      <% f.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %>
+  </div>
+
+  <div>
+    <%= f.label :user_email %>
+    <%= f.email_field :user_email %>
+  </div>
+
+  <div>
+    <%= f.label :user_password %>
+    <%= f.text_field :user_password %>
+  </div>
+
+  <div>
+    <%= f.label :user_password_confirmation %>
+    <%= f.text_field :user_password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </div>
+
+  <div>
+    <%= f.label :company_address %>
+    <%= f.text_field :company_address %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
